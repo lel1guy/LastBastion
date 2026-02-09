@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://xwbrevy25qp7"]
+
+[ext_resource type="Script" uid="uid://cbd70v2j3dvuj" path="res://Scripts/Mob.gd" id="1_g4q0k"]
+[ext_resource type="Texture2D" uid="uid://huh45u1st4w0" path="res://Assets/Enemies/Zombies/Big Zombie_1.png" id="2_g4q0k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khsnb"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(64, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5j8q"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(128, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub2eq"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(192, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08ppq"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(256, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oklkn"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(320, 1280, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut7dp"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(64, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_421i1"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(128, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0n55k"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(192, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82ya2"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(256, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ac1ul"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(320, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdprl"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(384, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jy03"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(448, 640, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3kb0"]
+atlas = ExtResource("2_g4q0k")
+region = Rect2(512, 640, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofjqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khsnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5j8q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub2eq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08ppq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oklkn")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut7dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_421i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0n55k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82ya2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ac1ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdprl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jy03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3kb0")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_fqawy"]
+script/source = "extends AnimatedSprite2D
+
+func walk():
+	play(\"Walk\")
+	
+func die():
+	play(\"Death\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x0ip"]
+radius = 18.0
+height = 58.0
+
+[node name="Mob" type="CharacterBody2D" unique_id=1551133509]
+input_pickable = true
+script = ExtResource("1_g4q0k")
+health = 4
+speed = 60
+gold_amout = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=863245252]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ofjqa")
+animation = &"Walk"
+speed_scale = 2.5
+script = SubResource("GDScript_fqawy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1487630720]
+position = Vector2(0, 8)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_7x0ip")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

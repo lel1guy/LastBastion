@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://d3jpgi12torvu"]
+
+[ext_resource type="Script" uid="uid://due05sw4mwss1" path="res://Scripts/upgrades.gd" id="1_6ahmb"]
+[ext_resource type="Script" uid="uid://bkgrud2ndnkj3" path="res://Scripts/resources.gd" id="2_eoefc"]
+[ext_resource type="Texture2D" uid="uid://bw50ir56i8we5" path="res://Assets/UpgradeMenuUi/Plain Paper UI SpriteSheet.png" id="2_pjr1x"]
+[ext_resource type="Texture2D" uid="uid://b42t4aublhd8w" path="res://Assets/Resources/Gold.png" id="4_lh4wn"]
+[ext_resource type="Texture2D" uid="uid://mgxxjdipa7oi" path="res://Assets/Resources/Scrap.png" id="5_e8f14"]
+[ext_resource type="Texture2D" uid="uid://dhvwfl4xg68ry" path="res://Assets/Resources/food.png" id="6_37quw"]
+[ext_resource type="FontFile" uid="uid://b5slelaak7bnu" path="res://Assets/Font/Kaph-Regular.ttf" id="8_e8f14"]
+[ext_resource type="PackedScene" uid="uid://dfiuc65ia3srd" path="res://Scenes/Upgrades/upgrade_item.tscn" id="8_lh4wn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lh4wn"]
+atlas = ExtResource("2_pjr1x")
+region = Rect2(97, 97, 319, 367)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8f14"]
+atlas = ExtResource("2_pjr1x")
+region = Rect2(848, 1257, 416, 71)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjr1x"]
+atlas = ExtResource("2_pjr1x")
+region = Rect2(1499, 324, 233, 120)
+
+[node name="UpgradeMenu" type="Control" unique_id=113146023]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ahmb")
+
+[node name="Resources" type="CanvasLayer" parent="." unique_id=1837918510]
+layer = 10
+script = ExtResource("2_eoefc")
+
+[node name="GoldLabel" type="Label" parent="Resources" unique_id=1461725108]
+z_index = 1
+offset_left = 124.0
+offset_top = 21.2
+offset_right = 147.0
+offset_bottom = 44.2
+theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("8_e8f14")
+theme_override_font_sizes/font_size = 11
+text = ":0"
+vertical_alignment = 1
+
+[node name="GoldIcon" type="Sprite2D" parent="Resources" unique_id=1588279680]
+z_index = 1
+position = Vector2(114.2, 32.199997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_lh4wn")
+
+[node name="ScrapLabel" type="Label" parent="Resources" unique_id=555261592]
+z_index = 1
+offset_left = 186.0
+offset_top = 21.2
+offset_right = 209.0
+offset_bottom = 44.2
+theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("8_e8f14")
+theme_override_font_sizes/font_size = 11
+text = ":0"
+vertical_alignment = 1
+
+[node name="ScrapIcon" type="Sprite2D" parent="Resources" unique_id=1174198727]
+z_index = 1
+position = Vector2(177.19997, 32.199997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e8f14")
+
+[node name="FoodLabel" type="Label" parent="Resources" unique_id=2008095277]
+z_index = 1
+offset_left = 255.0
+offset_top = 21.2
+offset_right = 278.0
+offset_bottom = 44.2
+theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("8_e8f14")
+theme_override_font_sizes/font_size = 11
+text = ":0"
+vertical_alignment = 1
+
+[node name="FoodIcon" type="Sprite2D" parent="Resources" unique_id=884241639]
+z_index = 1
+position = Vector2(245.19995, 32.199997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_37quw")
+
+[node name="BG" type="TextureRect" parent="." unique_id=323683537]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_lh4wn")
+
+[node name="Banner" type="TextureRect" parent="." unique_id=1299858127]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 13.0
+offset_right = 259.0
+offset_bottom = 84.0
+grow_horizontal = 2
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_e8f14")
+
+[node name="Label" type="Label" parent="." unique_id=264819443]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 58.0
+offset_right = 272.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.5070281, 0.30851296, 0.238834, 1)
+theme_override_fonts/font = ExtResource("8_e8f14")
+text = "Upgrade Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="." unique_id=103655229]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 636.0
+offset_right = 398.0
+offset_bottom = 812.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
+theme_override_fonts/font = ExtResource("8_e8f14")
+theme_override_font_sizes/font_size = 18
+text = "Back"
+icon = SubResource("AtlasTexture_pjr1x")
+flat = true
+clip_text = true
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1741656174]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 78.0
+offset_right = 451.99997
+offset_bottom = 255.0
+scale = Vector2(0.8, 0.8)
+alignment = 1
+
+[node name="PocketSearch" parent="HBoxContainer" unique_id=318686114 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Pocket Search"
+description = "Check their pockets! Mobs drop more gold when defeated"
+base_cost_gold = 10
+upgrade_id = "Pocket Search"
+
+[node name="Unloack_storeroom" parent="HBoxContainer" unique_id=1793971074 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Unlock Storeroom"
+description = "Opens the storeroom to allow for scrap collection."
+base_cost_gold = 50
+upgrade_id = "Storeroom_Unlocked"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1391702883]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 224.0
+offset_right = 451.74997
+offset_bottom = 401.0
+scale = Vector2(0.8, 0.8)
+alignment = 1
+
+[node name="Scavengers" parent="HBoxContainer2" unique_id=2103818080 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Scavengers"
+description = "Hire help to pick through the wreckage automatically."
+base_cost_gold = 75
+base_cost_scrap = 10
+upgrade_id = "Scavengers"
+
+[node name="Unlock_Farm" parent="HBoxContainer2" unique_id=869019377 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Unlock Farm"
+description = "Get the plants to begin growing food for the camp."
+base_cost_gold = 150
+base_cost_scrap = 50
+upgrade_id = "Farm_Unlocked"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=1615334803]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 361.0
+offset_right = 451.74997
+offset_bottom = 538.0
+scale = Vector2(0.8, 0.8)
+alignment = 1
+
+[node name="Farmers" parent="HBoxContainer3" unique_id=867564510 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Farmers"
+description = "Experienced hands to tend the crops day and night."
+base_cost_gold = 200
+base_cost_food = 20
+upgrade_id = "Farmers"
+
+[node name="Archers" parent="HBoxContainer3" unique_id=1003815459 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Archer Militia"
+description = "Recruit a new defender to watch the walls."
+base_cost_gold = 200
+base_cost_scrap = 100
+base_cost_food = 50
+upgrade_id = "Archers"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=984705716]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 507.0
+offset_right = 451.99997
+offset_bottom = 684.0
+scale = Vector2(0.8, 0.8)
+alignment = 1
+
+[node name="Archery Gear" parent="HBoxContainer4" unique_id=537833518 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Archery Gear"
+description = "High-quality bows and sharpened tips for more impact."
+base_cost_gold = 300
+base_cost_scrap = 175
+upgrade_id = "Gear"
+
+[node name="Quiver Capacity" parent="HBoxContainer4" unique_id=1741351364 instance=ExtResource("8_lh4wn")]
+layout_mode = 2
+upgrade_name = "Quiver Capacity"
+description = "Allows archers to fire multiple arrows at once."
+base_cost_gold = 500
+base_cost_scrap = 250
+base_cost_food = 150
+upgrade_id = "Arrow_count"
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bscn6xvija4dj"]
+
+[ext_resource type="Script" uid="uid://ccm535xcobjeh" path="res://Scripts/main.gd" id="1_idj7w"]
+[ext_resource type="PackedScene" uid="uid://d3jpgi12torvu" path="res://Scenes/Upgrades.tscn" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://pst02jfmy1rv" path="res://Scenes/Game.tscn" id="2_rgh2o"]
+
+[node name="Main" type="Node" unique_id=271740441]
+script = ExtResource("1_idj7w")
+
+[node name="Game" parent="." unique_id=442346204 instance=ExtResource("2_rgh2o")]
+goblin = Array[PackedScene]([])
+orc = Array[PackedScene]([])
+orc_boss = Array[PackedScene]([])
+demons = Array[PackedScene]([])
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=86727270]
+
+[node name="UpgradeMenu" parent="UI_Layer" unique_id=113146023 instance=ExtResource("2_kln2b")]

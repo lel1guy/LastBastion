@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bvqiritffs0vo"]
+
+[ext_resource type="Texture2D" uid="uid://thmjhk6jnwk" path="res://Assets/Projectile/Arrow.png" id="1_5mg4u"]
+[ext_resource type="Script" uid="uid://cdftjf8np6phh" path="res://Scripts/arrow.gd" id="1_7v023"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v023"]
+atlas = ExtResource("1_5mg4u")
+region = Rect2(15.826332, 13.011523, 5.3699455, 21.144165)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qttmj"]
+radius = 5.0
+height = 25.0
+
+[node name="Arrow" type="Area2D" unique_id=117585643]
+collision_layer = 4
+collision_mask = 3
+input_pickable = false
+script = ExtResource("1_7v023")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2002589661]
+texture = SubResource("AtlasTexture_7v023")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1131232668]
+shape = SubResource("CapsuleShape2D_qttmj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://dw48ht817xr8k"]
+
+[ext_resource type="Script" uid="uid://cbd70v2j3dvuj" path="res://Scripts/Mob.gd" id="1_lq368"]
+[ext_resource type="Texture2D" uid="uid://dgs3083cxi2la" path="res://Assets/Enemies/Zombies/Big Zombie_3_hurt.png" id="2_t0xhx"]
+[ext_resource type="Texture2D" uid="uid://deojy0sjn44dj" path="res://Assets/Enemies/Zombies/Big Zombie_3_walk.png" id="3_nqkai"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nstq"]
+atlas = ExtResource("2_t0xhx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad430"]
+atlas = ExtResource("2_t0xhx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3a0s"]
+atlas = ExtResource("2_t0xhx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66omg"]
+atlas = ExtResource("2_t0xhx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yebxd"]
+atlas = ExtResource("2_t0xhx")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agvp8"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnf3i"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spufi"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpy4l"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya116"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntkk8"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cgei"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wx3v"]
+atlas = ExtResource("3_nqkai")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ofjqa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nstq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad430")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3a0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66omg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yebxd")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agvp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnf3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spufi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpy4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya116")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntkk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cgei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wx3v")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_fqawy"]
+script/source = "extends AnimatedSprite2D
+
+func walk():
+	play(\"Walk\")
+	
+func die():
+	play(\"Death\")
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7x0ip"]
+radius = 18.0
+height = 58.0
+
+[node name="Mob" type="CharacterBody2D" unique_id=1551133509]
+input_pickable = true
+script = ExtResource("1_lq368")
+health = 4
+speed = 60
+gold_amout = 4
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=863245252]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_ofjqa")
+animation = &"Walk"
+frame = 4
+frame_progress = 0.27325824
+speed_scale = 2.5
+script = SubResource("GDScript_fqawy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1487630720]
+position = Vector2(0, 8)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CapsuleShape2D_7x0ip")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
