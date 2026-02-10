@@ -61795,6 +61795,7 @@ theme_override_fonts/font = ExtResource("17_t2joc")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GoldIcon" type="Sprite2D" parent="Resources" unique_id=946855058]
 z_index = 1
@@ -61813,6 +61814,7 @@ theme_override_fonts/font = ExtResource("17_t2joc")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ScrapIcon" type="Sprite2D" parent="Resources" unique_id=2104682252]
 z_index = 1
@@ -61831,6 +61833,7 @@ theme_override_fonts/font = ExtResource("17_t2joc")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FoodIcon" type="Sprite2D" parent="Resources" unique_id=1173344172]
 z_index = 1
@@ -61938,17 +61941,20 @@ offset_top = 494.0
 offset_right = 40.0
 offset_bottom = 532.5693
 scale = Vector2(9.615385, 5.885518)
+metadata/_edit_use_anchors_ = true
 
 [node name="RoomsButtons" type="Control" parent="BaseUserInterface" unique_id=854553623]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="UpgradeMenuButton" type="Button" parent="BaseUserInterface/RoomsButtons" unique_id=1578986182]
 layout_mode = 0
 offset_top = 27.525192
 offset_right = 13.311999
 offset_bottom = 38.24373
+metadata/_edit_use_anchors_ = true
 
 [node name="ScavangeButton" type="Button" parent="BaseUserInterface/RoomsButtons" unique_id=2106852654]
 layout_mode = 0
@@ -61956,6 +61962,7 @@ offset_left = 3.432
 offset_top = 5.7768917
 offset_right = 15.079999
 offset_bottom = 19.369581
+metadata/_edit_use_anchors_ = true
 
 [node name="ScavangeTimer" type="Timer" parent="BaseUserInterface/RoomsButtons/ScavangeButton" unique_id=848598212]
 wait_time = 30.0
@@ -61968,6 +61975,7 @@ offset_top = 5.9468
 offset_right = 38.272
 offset_bottom = 19.369583
 icon_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FarmTimer" type="Timer" parent="BaseUserInterface/RoomsButtons/FarmButton" unique_id=890053406]
 one_shot = true
@@ -62000,6 +62008,7 @@ theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
 theme_override_fonts/font = ExtResource("17_t2joc")
 theme_override_font_sizes/font_size = 5
 text = "Workshop"
+metadata/_edit_use_anchors_ = true
 
 [node name="Farm" type="Node2D" parent="BaseUserInterface/Rooms" unique_id=1365224460]
 visible = false
