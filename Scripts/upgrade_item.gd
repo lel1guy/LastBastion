@@ -40,7 +40,7 @@ func apply_upgrade():
 	match upgrade_id:
 		
 		"Pocket Search":
-			if current_level > 1:
+			if current_level >= 1:
 				GameManager.gold_drop_multiplier += 0.5
 			else:
 				GameManager.gold_drop_multiplier += 1
@@ -52,7 +52,7 @@ func apply_upgrade():
 			
 		"Farmers":
 			GameManager.auto_farm = true
-			if current_level > 1:
+			if current_level >= 1:
 				GameManager.auto_food_amount *= 1.25
 			
 		"Strenght":
@@ -60,12 +60,12 @@ func apply_upgrade():
 		
 		"Storeroom_Unlocked":
 			GameManager.storeroom_unlocked = true
-			if current_level > 1:
+			if current_level >= 1:
 				GameManager.scrap_per_scavange *= 1.25
 			
 		"Farm_Unlocked":
 			GameManager.farm_unlocked = true
-			if current_level > 1:
+			if current_level >= 1:
 				GameManager.food_per_harvest *= 1.25
 		
 		"Gear":
