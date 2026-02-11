@@ -14,6 +14,7 @@ extends PanelContainer
 var current_level : int = 0
 
 @onready var title_label: Label = $TextureRect/VBoxContainer/TitleLabel
+@onready var description_label: Label = $TextureRect/VBoxContainer/DescriptionLabel
 @onready var cost_label: Label = $TextureRect/VBoxContainer/CostLabel
 @onready var buy_button: Button = $TextureRect/VBoxContainer/BuyButton
 
@@ -90,6 +91,7 @@ func update_ui():
 	var food_cost = get_current_cost(base_cost_food)
 	
 	title_label.text = "%s (Lvl %d)" % [upgrade_name, current_level]
+	description_label.text = "%s" %description
 	
 	var cost_text = ""
 	if gold_cost > 0 : cost_text += "Gold: %d " %gold_cost

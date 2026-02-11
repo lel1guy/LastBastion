@@ -37,55 +37,58 @@ script = ExtResource("2_eoefc")
 
 [node name="GoldLabel" type="Label" parent="Resources" unique_id=1461725108]
 z_index = 1
-offset_left = 124.0
+offset_left = 134.0
 offset_top = 21.2
-offset_right = 147.0
+offset_right = 157.0
 offset_bottom = 44.2
 theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
 theme_override_fonts/font = ExtResource("8_e8f14")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="GoldIcon" type="Sprite2D" parent="Resources" unique_id=1588279680]
 z_index = 1
-position = Vector2(114.2, 32.199997)
+position = Vector2(124.2, 32.199997)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("4_lh4wn")
 
 [node name="ScrapLabel" type="Label" parent="Resources" unique_id=555261592]
 z_index = 1
-offset_left = 186.0
+offset_left = 196.0
 offset_top = 21.2
-offset_right = 209.0
+offset_right = 219.0
 offset_bottom = 44.2
 theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
 theme_override_fonts/font = ExtResource("8_e8f14")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ScrapIcon" type="Sprite2D" parent="Resources" unique_id=1174198727]
 z_index = 1
-position = Vector2(177.19997, 32.199997)
+position = Vector2(187.19997, 32.199997)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_e8f14")
 
 [node name="FoodLabel" type="Label" parent="Resources" unique_id=2008095277]
 z_index = 1
-offset_left = 255.0
+offset_left = 265.0
 offset_top = 21.2
-offset_right = 278.0
+offset_right = 288.0
 offset_bottom = 44.2
 theme_override_colors/font_color = Color(0.5058824, 0.30980393, 0.23921569, 1)
 theme_override_fonts/font = ExtResource("8_e8f14")
 theme_override_font_sizes/font_size = 11
 text = ":0"
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="FoodIcon" type="Sprite2D" parent="Resources" unique_id=884241639]
 z_index = 1
-position = Vector2(245.19995, 32.199997)
+position = Vector2(255.19997, 32.199997)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_37quw")
 
