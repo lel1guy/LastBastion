@@ -1,3 +1,4 @@
+class_name Game
 extends Node2D
 
 
@@ -89,3 +90,13 @@ func _on_farm_timer_timeout() -> void:
 	farm_button.disabled = false
 	GameManager.add_food(GameManager.food_per_harvest)
 	auto_food.visible = false
+
+
+
+
+	
+	
+	
+	
+	
+	
