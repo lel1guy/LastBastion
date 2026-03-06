@@ -6,9 +6,9 @@ signal food_changed(amount: int)
 signal scrap_changed(amount: int)
 
 #Resources
-var gold: int = 500
-var scrap: int = 500
-var food: int = 500
+var gold: int = 0
+var scrap: int = 0
+var food: int = 0
 
 #resource Management
 func add_gold(amount: int):
@@ -63,6 +63,8 @@ var max_archer_count : int = 4
 var unlocked_stage : int = 0
 
 # Economy Stats
+#Level
+var upgrade_level : int = 1
 #Scrap
 var scavange_time : float = 15
 var scrap_per_scavange : int = 10
@@ -81,7 +83,12 @@ var auto_food_amount : int = 1
 #auto Resources
 var auto_resource_timer : float = 1.0
 
+#Last Save Time
+var last_saved_time: float = 0.0
+
 func _ready() -> void:
+	SaveLoad.load_game()
+	
 	var timer = Timer.new()
 	timer.wait_time = auto_resource_timer
 	timer.autostart = true
@@ -96,3 +103,16 @@ func _on_resource_timer_timeout() -> void:
 	#Food
 	if auto_farm:
 		add_food(auto_food_amount)
+		
+		
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		SaveLoad.save_game()
+		get_tree().quit()
+	
+	elif what == NOTIFICATION_WM_GO_BACK_REQUEST:
+		SaveLoad.save_game()
+		get_tree().quit()
+		
+	elif what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_APPLICATION_FOCUS_OUT:
+		SaveLoad.save_game()

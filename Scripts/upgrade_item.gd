@@ -37,7 +37,7 @@ func _on_buy_button_pressed() -> void:
 		update_ui()
 		
 func apply_upgrade():
-	current_level += 1
+	GameManager.upgrade_level += 1
 	match upgrade_id:
 		
 		"Pocket Search":
