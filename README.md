@@ -29,7 +29,9 @@ Survive. Upgrade. Endure.
 
 ## Screenshots
 
-> ⚠️ TODO: Add a gameplay GIF or screenshot here.
+<img width="410" height="727" alt="image" src="https://github.com/user-attachments/assets/46c5e050-4f64-49e8-aa7b-67a5b5cb89d4" />
+<img width="403" height="724" alt="image" src="https://github.com/user-attachments/assets/060f06ae-c11f-428c-9482-e9699deef65b" />
+
 
 ## Built With
 
