@@ -27,6 +27,10 @@ Survive. Upgrade. Endure.
 
 ---
 
+## Screenshots
+
+> ⚠️ TODO: Add a gameplay GIF or screenshot here.
+
 ## Built With
 
 - [Godot 4](https://godotengine.org/) -- game engine
@@ -82,6 +86,8 @@ Core loop is playable (alpha milestone reached). Save/load works, upgrades work,
 
 ---
 
+---
+
 ## License
 
-This project is currently unlicensed. All rights reserved.
+MIT — see [LICENSE](LICENSE)
